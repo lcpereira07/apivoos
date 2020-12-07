@@ -147,6 +147,6 @@ class VooController extends Controller
     	}catch(\Exception $erro){
     		return['response'=>'Erro', 'Erro'=>$erro];
     	}
-    }
+    } 
 
 }
