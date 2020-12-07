@@ -41,8 +41,8 @@ Onde "http://localhost" é o path do servidor php
 # Response
 
 ```{
-"flights": // retorne aqui os voos consultados na api em prova.123milhas.net
-"groups": [
+	"flights": // retorne aqui os voos consultados na api em prova.123milhas.net
+	"groups": [
 		{
 			"uniqueId": // id unico do grupo
 			"totalPrice": // preço total do grupo

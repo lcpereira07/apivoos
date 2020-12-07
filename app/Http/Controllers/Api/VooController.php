@@ -25,6 +25,9 @@ class VooController extends Controller
     	}
     }
 
+    /**
+    * Método para buscar base de voos de acordo com o tipo (outbound/inbound)
+    */
     public function getVoosBase($url){
     	try{
 
@@ -44,6 +47,9 @@ class VooController extends Controller
     	}
     }
 
+    /**
+    * Método que prepara a lista de voos do tipo outbound de acordo com a tarifa
+    */
     public function agrupaOutbound(){
     	try{
 
@@ -60,6 +66,9 @@ class VooController extends Controller
     	}
     }
 
+    /**
+    * Método que prepara a lista de voos do tipo inbound de acordo com a tarifa
+    */
     public function agrupaInbound(){
     	try{
 
@@ -76,6 +85,9 @@ class VooController extends Controller
     	}
     }
 
+    /**
+    * Cria os grupos de voos de acordo com tarifa/preço e retorna os uma lista ordenada pelo preço do grupo
+    */
     public function geraGrupos(){
     	try{
     		$vooGrouped = array();
@@ -120,6 +132,9 @@ class VooController extends Controller
     	}
     }
 
+    /**
+    * Metodo para ordenar a lista de grupo de acordo com o preço total de cada grupo
+    */
     public function ordenaGrupo($vooGrouped){
     	usort($vooGrouped, function($a, $b) {
 		    return $a['totalPrice'] <=> $b['totalPrice'];
@@ -128,6 +143,9 @@ class VooController extends Controller
     	return $vooGrouped;
     }
 
+    /**
+    * Busca a base de voos e os grupos para montar um response e retornar ao client
+    */
     public function agrupaVoos($grupos){
     	try{
 
