@@ -19,5 +19,5 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 Route::namespace('App\Http\Controllers\Api')->group(function(){
-	Route::get('/getvoos', 'VooController@getVoos');
+	Route::get('/flights', 'VooController@getVoos');
 });
