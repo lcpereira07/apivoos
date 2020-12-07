@@ -107,11 +107,12 @@ class VooController extends Controller
 										);
     					$uniqueId++;
 
-    					$vooGrouped = $this->ordenaGrupo($vooGrouped);
     				}
     			}
     		}
 
+    		$vooGrouped = $this->ordenaGrupo($vooGrouped);
+    		
     		return $vooGrouped;
 
     	}catch(\Exception $erro){
@@ -120,7 +121,9 @@ class VooController extends Controller
     }
 
     public function ordenaGrupo($vooGrouped){
-
+    	usort($vooGrouped, function($a, $b) {
+		    return $a['totalPrice'] <=> $b['totalPrice'];
+		});
 
     	return $vooGrouped;
     }
